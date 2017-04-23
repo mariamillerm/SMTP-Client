@@ -4,12 +4,12 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid>
         <TextBox x:Name="text_Data" HorizontalAlignment="Left" Height="217" Margin="10,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="338"/>
-        <TextBox x:Name="login" HorizontalAlignment="Left" Height="22" Margin="369,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="138"/>
+        <TextBox x:Name="login" HorizontalAlignment="Left" Height="22" Margin="369,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138"/>
         <PasswordBox x:Name="password" HorizontalAlignment="Left" Height="21" Margin="369,37,0,0" VerticalAlignment="Top" Width="138" RenderTransformOrigin="0.483,1.736"/>
-        <TextBox x:Name="text_To" HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="188"/>
-        <TextBox x:Name="text_Subject" HorizontalAlignment="Left" Height="21" Margin="10,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="253"/>
+        <TextBox x:Name="text_To" HorizontalAlignment="Left" Height="22" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"/>
+        <TextBox x:Name="text_Subject" HorizontalAlignment="Left" Height="21" Margin="10,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="253"/>
         <Button x:Name="btnSendMail" Content="Отправить" HorizontalAlignment="Left" Height="26" Margin="369,283,0,0" VerticalAlignment="Top" Width="133" Click="btnSendMail_Click"/>
-        <TextBox x:Name="text_Name" HorizontalAlignment="Left" Height="22" Margin="212,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="136"/>
+        <TextBox x:Name="text_Name" HorizontalAlignment="Left" Height="22" Margin="212,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136"/>
 
     </Grid>
 </Window>
