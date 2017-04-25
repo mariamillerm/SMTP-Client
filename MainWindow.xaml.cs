@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Net.Mail;
 using System.Net;
+using Microsoft.Win32;
 
 namespace SMTP_Client
 {
@@ -69,6 +70,13 @@ namespace SMTP_Client
             MailMessage m = new MailMessage(from, to);
             m.Subject = text_Subject.Text;
             m.Body = text_Data.Text;
+            //вложения
+            //m.Attachments.Add(new Attachment("D://temlog.txt"));
+            if (lb_Additions.Items.Count > 0) {
+                for (int i = 0; i < lb_Additions.Items.Count; i++) {
+                    m.Attachments.Add(new Attachment((String)lb_Additions.Items.GetItemAt(i)));
+                }
+            }
             m.IsBodyHtml = false;
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 25);
             smtp.Credentials = new NetworkCredential(login.Text, password.Password); 
@@ -84,6 +92,25 @@ namespace SMTP_Client
             System.Windows.MessageBox.Show("Сообщение было отправлено!", "Операция прошла успешно", MessageBoxButton.OK);
             text_Data.Text = "";
             text_Subject.Text = "";
+            lb_Additions.Items.Clear();
+        }
+
+        private void btn_Add_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if (openFileDialog1.ShowDialog() == true)
+            {
+                String filename = openFileDialog1.FileName;
+                lb_Additions.Items.Add(filename);
+            }
+        }
+
+        private void lb_Additions_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (lb_Additions.SelectedIndex != -1 && Keyboard.IsKeyDown(Key.Delete))
+            {
+                lb_Additions.Items.RemoveAt(lb_Additions.SelectedIndex);
+            }
         }
     }
 }
